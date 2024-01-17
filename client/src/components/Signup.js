@@ -9,7 +9,7 @@ export const SignupForm = () => {
 
   useEffect(() => {
     console.log("FETCH! ");
-    fetch("/customers")
+    fetch("http://127.0.0.1:8000/customers")
       .then((res) => res.json())
       .then((data) => {
         setCustomers(data);
@@ -37,7 +37,7 @@ export const SignupForm = () => {
     },
     validationSchema: formSchema,
     onSubmit: (values) => {
-      fetch("customers", {
+      fetch("http://127.0.0.1:8000/customers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
